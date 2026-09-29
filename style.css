@@ -1,0 +1,147 @@
+body {
+  background-color: rgb(237, 219, 198);
+  font-family: arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(22, 34, 170);
+}
+
+.palco {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 30px;
+  background-color: rgb(129, 191, 241);
+  border: 4px solid rgb(62, 61, 61);
+}
+
+.caixa {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background-color: rgb(26, 21, 92);
+  text-align: center;
+  line-height: 50px;
+  border-radius: 10px;
+}
+
+.caixa-vertical {
+  left: 120px;
+  bottom: 0;
+  animation: vertical 3s infinite alternate;
+}
+
+@keyframes vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-150px);
+  }
+}
+
+.caixa-horizontal {
+  left: 0;
+  top: 80px;
+  animation: horizontal 3s infinite alternate;
+}
+
+@keyframes horizontal {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(240px);
+  }
+}
+
+.caixa-diagonal {
+  left: 0;
+  top: 0;
+  animation: diagonal 3s infinite alternate;
+}
+
+@keyframes diagonal {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(240px, 150px);
+  }
+}
+
+.caixa-etapas {
+  position: relative;
+  left: 0;
+  top: 0;
+  animation-name: etapas;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.caixa-etapas:nth-child(1) {
+  animation-duration: 1s;
+  color: white;
+}
+
+.caixa-etapas:nth-child(2) {
+  animation-duration: 3s;
+  color: white;
+}
+
+.caixa-etapas:nth-child(3) {
+  animation-duration: 5s;
+  color: white;
+}
+
+@keyframes etapas {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(240px);
+  }
+}
+
+.caixa-movimento {
+  animation: diagonal 3s infinite alternate;
+}
+
+@keyframes movimento {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(200px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.caixa:focus-visible {
+  outline: 3px solid blue;
+  transform: scale(1.1);
+  background-color: rgb(140, 215, 255);
+  color: rgb(15, 15, 15);
+}
+
+.caixa:hover {
+  background-color: tomato;
+}
+
+.caixa:hover {
+  animation-play-state: paused;
+}
+
+.botao:active {
+  background-color: gold;
+  font-size: 20px;
+}
